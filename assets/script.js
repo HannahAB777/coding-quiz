@@ -10,7 +10,7 @@ startTimer.addEventListener("click", startGame);
 function startGame(){
     startTimer.style.visibility = "hidden"; //hide start btn
     //start the timer
-
+    
 }
 
 function setNextQuestion(){
@@ -64,4 +64,12 @@ const questions = [
 
         ]
     }
-]
+];
+
+
+//highscore storage
+
+//input for name
+
+
+
