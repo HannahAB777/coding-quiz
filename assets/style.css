@@ -14,6 +14,12 @@ body{
     background-color: rgba(247, 188, 62, 0.938);
 }
 
+
+.hide{
+     display: none;
+    }
+    
+
 #timer{
     position:absolute;
     top:0;
@@ -26,7 +32,7 @@ body{
     padding: 10px;
 
 }
-.question-container{
+.question-container {
   width: 800px;
   max-width: 80%;
   background-color: azure;
@@ -43,6 +49,6 @@ body{
     border-radius: 5px;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: coral
 }

@@ -8,24 +8,62 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <div id= "timer">2:00</div>
+
+    <!-- landing -->
+    <!-- start button -->
+    <section id="landing-page">
+        <button id="start-btn" class="btn">Start</button>
+    </section>
+
+    <div id= "timer" class="hide">00:60</div>
+
+    <section class="hide" id="question">
+        <!-- timer -->
         
-    
+        <!-- question -->
+        <!-- tile -->
+        <!-- choices/ans -->
+            
+        
         <div class = "quiz-box" id= "quiz">
-            <div class = "question-container" id = "question">this is a question</div>
+            <div class = "question-container">
+                <div id = "question-storage"></div>
             <div class="answer-container" id="asnwer-grid">
-                <div class = "btn" id = "A">A</div>
-                <div class = "btn" id = "B">B</div>
-                <div class = "btn" id = "C">C</div>
-                <div class = "btn" id = "D">D</div>
-                </div>
-            <div id="start-btn" class="start btn">start</div>
-            <div id="next-btn" class="next btn">next</div>
+                <ul id = "answer-list"></ul>
+            </div>
+        
         </div>
+    </section>
+
+
+
+    <!-- input page -->
+    <!-- enter name to save highscore -->
+    <section class="hide" id="end-game">
+        <input type="text" id="input-inital" placeholder="Enter your name here">
+        <button class = "btn">sumbit</button>
+    </section>
+
+    <!-- highscore page -->
+    <!-- display all the existing highscore -->
+    <section class="hide" id="highscore-page">
+        <ol>
+            <li>Sam: 0</li>
+            <li>Hannah: 10</li>
+        </ol>
+    </section>
+
+
+
+
+
+
+
     
     
    
 
-    <script src= "./assets/script.js"></script>
+    <script src= "./assets/questionStorage.js"></script>
+    <script src= "./assets/app.js"></script>
 </body>
 </html>
