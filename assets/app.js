@@ -1,14 +1,15 @@
-var timer = document.getElementById("timer");
-var start = document.getElementById("start-btn");
-var score = 0;
+const timer = document.getElementById("timer");
+const start = document.getElementById("start-btn");
+let score = 0;
 var answerOptions = document.getElementById('anser-grid');
 var questionOptions = document.getElementById('question-storage');
 var answerList = document.getElementById("answer-list");
 var currentQuestion = 0;
-
+const userinput = document.getElementById("input-inital");
+let userName = userinput.value; 
 start.addEventListener("click", startGame);
 
-var timeLeft = 60; // 60 sec
+let timeLeft = 60; // 60 sec
 
 function startTimer(){
 
@@ -91,24 +92,19 @@ function renderQuestion(questionIndex){
 
 function answerCheck(event){
     event.preventDefault();
-
+    score = score;
     // when the user click on the choice btn
 
     // check if user picked on the correct ans
     const isCorrect = event.target.getAttribute('data-is-correct') === 'true';
-
-
-
     
-
-    // if correct
     if(isCorrect){
         score = score + 20;
         // do nothing
     }else{
         // if wrong
         // deduct the time by 10 sec
-        timeRemaining = timeRemaining - 10;
+        timeLeft = timeLeft - 10;
         // [maybe] show the user feedback
 
     }
@@ -123,11 +119,52 @@ function answerCheck(event){
     renderQuestion(currentQuestion);
 }
 
+score = score;
+
 function endGame(){
 //stop timer
 document.getElementById('question').classList.add('hide');
 document.getElementById('end-game').classList.remove('hide');
 }
+
+let highScoreSubmit = document.getElementById("score-submit");
+
+highScoreSubmit.addEventListener("click", function (submit){
+
+let userName = userinput.value; 
+
+submit.preventDefault();
+if(userName === ""){
+ console.log("no name added");
+}
+else 
+if(userName !== ""){
+    console.log("button was clicked");
+    document.getElementById('end-game').classList.add('hide');
+    document.getElementById("highscore-page").classList.remove('hide'); 
+    console.log(userName);
+    console.log(score);
+
+    localStorage.setItem("score", userName + " " + score);
+    
+    localStorage.getItem("score");
+
+   for (let i = 0; i < localStorage.length; i++) {
+       const scores = score[i];
+
+       const highScoreList = document.createElement("li");
+       highScoreList.textContent = scores;
+       
+       leadersTable = document.getElementById("highscore-list");
+       leadersTable.appendChild(highScoreList);
+       
+   }
+}
+
+});
+
+
+
 //show end game screen
 // if user doesnt enter anything alert them to that they cannot enter no value
 //prevent default
