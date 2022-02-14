@@ -1,83 +1,91 @@
 const questions = 
     [
         {
-            title: "how are ya?",
+            title: "What language is used to style your webpage or app?",
             choices: [
                 {
-                    title: "goodaaaa",
+                    title: "HTML",
+                    isAnswer: false,
+                },
+                {
+                    title: "CSS",
                     isAnswer: true,
                 },
                 {
-                    title: "bad",
+                    title: "JAVASCRIPT",
+                    isAnswer: false,
+                },
+                {
+                    title: "MANDARIN",
                     isAnswer: false,
                 },
             ],
         },
         {
-            title: "how are doin?",
+            title: "What is moment.js used for?",
             choices: [
                 {
-                    title: "bloody good",
+                    title: "To capture events in a timeinterval",
+                    isAnswer: false,
+                },
+                {
+                    title: "To pause applications",
+                    isAnswer: false,
+                },
+                {
+                    title: "To post instagrams direct from your computer",
+                    isAnswer: false,
+                },
+                {
+                    title: "To manipulate and display dates and times in JavaScript",
                     isAnswer: true,
-                },
-                {
-                    title: "bad",
-                    isAnswer: false,
-                },
-                {
-                    title: "maybe",
-                    isAnswer: false,
                 },
             ],
         },
     
         {
-            title: "how are goin?",
+            title: "What can JAVASCRIPT be used for?",
             choices: [
                 {
-                    title: "bloody good",
+                    title: "To send anonymous love letters",
+                    isAnswer: false,
+                },
+                {
+                    title: "To build the layout of your application",
+                    isAnswer: false,
+                },
+                {
+                    title: "To develop interactive web applications",
                     isAnswer: true,
                 },
                 {
-                    title: "bad",
+                    title: "To make hot coffee",
                     isAnswer: false,
                 },
             ],
         },
         {
-            title: "how are doin?",
+            title: "Where should you store your code?",
             choices: [
                 {
-                    title: "bloody good",
-                    isAnswer: true,
-                },
-                {
-                    title: "bad",
+                    title: "In an unsaved file in your computer",
                     isAnswer: false,
                 },
                 {
-                    title: "maybe",
+                    title: "In someone elses repository",
+                    isAnswer: false,
+                },
+                {
+                    title: "In your repository",
+                    isAnswer: true,
+                },
+                {
+                    title: "Under the couch",
                     isAnswer: false,
                 },
             ],
         },
-        {
-            title: "how are doin?",
-            choices: [
-                {
-                    title: "bloody good",
-                    isAnswer: true,
-                },
-                {
-                    title: "bad",
-                    isAnswer: false,
-                },
-                {
-                    title: "maybe",
-                    isAnswer: false,
-                },
-            ],
-        },
+    
     ];
 
 

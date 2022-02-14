@@ -1,6 +1,7 @@
 *, *::before *::after {  
     box-sizing: border-box;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
 }
 
 body{
@@ -30,10 +31,11 @@ body{
     background-color: azure;
     border-radius: 5px;
     padding: 10px;
+    border: coral;
 
 }
 .question-container {
-  width: 800px;
+  width: 400px;
   max-width: 80%;
   background-color: azure;
   border-radius:5px;
@@ -42,7 +44,6 @@ body{
 
 .btn{
     display: grid;
-    grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px;
     background-color:peachpuff;
@@ -50,5 +51,9 @@ body{
 }
 
 .btn:hover {
-    background-color: coral
+    background-color: coral 5px solid;
+}
+
+li{
+    list-style: none;
 }

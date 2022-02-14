@@ -7,13 +7,23 @@ var answerList = document.getElementById("answer-list");
 var currentQuestion = 0;
 const userinput = document.getElementById("input-inital");
 let userName = userinput.value; 
+let savedScores = [];
+
+
 start.addEventListener("click", startGame);
+
+let localSavedScores = JSON.parse(localStorage.getItem("score"));
+
+if (localSavedScores !== ""){
+
+savedScores.push(localSavedScores);
+}
 
 let timeLeft = 60; // 60 sec
 
 function startTimer(){
 
-    const timerId = setInterval(function(){
+    let timerId = setInterval(function(){
         
         // we want deduct 1 from a counter for every passing sec
         timeLeft--;
@@ -26,6 +36,7 @@ function startTimer(){
             clearInterval(timerId);
             // end game
             endGame();
+            
         }
     
     },1000);
@@ -70,6 +81,7 @@ function renderQuestion(questionIndex){
         const button = document.createElement('button');
 
         button.classList.add('btn-choice');
+        button.classList.add('btn');
 
         // add an attribute to identify if is correct or not
         button.setAttribute('data-is-correct', choice.isAnswer);
@@ -122,20 +134,20 @@ function answerCheck(event){
 score = score;
 
 function endGame(){
+    clearInterval(timer);
 //stop timer
 document.getElementById('question').classList.add('hide');
 document.getElementById('end-game').classList.remove('hide');
-}
 
-let highScoreSubmit = document.getElementById("score-submit");
+const highScoreSubmit = document.getElementById("score-submit");
 
 highScoreSubmit.addEventListener("click", function (submit){
-
-let userName = userinput.value; 
+    
+    const userName = userinput.value; 
 
 submit.preventDefault();
 if(userName === ""){
- console.log("no name added");
+    console.log("no name added");
 }
 else 
 if(userName !== ""){
@@ -145,24 +157,30 @@ if(userName !== ""){
     console.log(userName);
     console.log(score);
 
-    localStorage.setItem("score", userName + " " + score);
+    yourHighScore = "Player: " + userName + " Score: "+ score;
+
+    savedScores.push(yourHighScore);
+
     
-    localStorage.getItem("score");
-
-   for (let i = 0; i < localStorage.length; i++) {
-       const scores = score[i];
-
-       const highScoreList = document.createElement("li");
-       highScoreList.textContent = scores;
-       
-       leadersTable = document.getElementById("highscore-list");
-       leadersTable.appendChild(highScoreList);
-       
-   }
+    localStorage.setItem("score", JSON.stringify(savedScores));
+    
+    
+    
+    for (let i = 0; i < savedScores.length; i++) {
+        const scores = savedScores[i];
+        
+        const highScoreList = document.createElement("li");
+        highScoreList.textContent = scores;
+        
+        leadersTable = document.getElementById("highscore-list");
+        leadersTable.appendChild(highScoreList);
+        
+    }
 }
 
 });
 
+}
 
 
 //show end game screen
