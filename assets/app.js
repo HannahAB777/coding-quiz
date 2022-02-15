@@ -13,12 +13,12 @@ const quizBox = document.getElementById("question");
 //click to start the game
 start.addEventListener("click", startGame);
 //find score is local storage
-let localSavedScores = JSON.parse(localStorage.getItem("score"));
+let localSavedScores = JSON.parse(localStorage.getItem("score")) || [];
 //if no scores do nothing if scores
-if (localSavedScores !== ""){
-//push the scores to the saved scores array
-savedScores.push(localSavedScores);
-}
+//if (localSavedScores !== ""){
+////push the scores to the saved scores array
+//savedScores.push(localSavedScores);
+//}
 
 let timeLeft = 60; // 60 sec
 
@@ -162,15 +162,15 @@ if(userName !== ""){
 
     yourHighScore = "Player: " + userName + " Score: "+ score;
 
-    savedScores.push(yourHighScore);
+    localSavedScores.push(yourHighScore);
 
     
-    localStorage.setItem("score", JSON.stringify(savedScores));
+    localStorage.setItem("score", JSON.stringify(localSavedScores));
     
     
     //render list of highscores
-    for (let i = 0; i < savedScores.length; i++) {
-        const scores = savedScores[i];
+    for (let i = 0; i < localSavedScores.length; i++) {
+        const scores = localSavedScores[i];
         
         const highScoreList = document.createElement("li");
         highScoreList.textContent = scores;
