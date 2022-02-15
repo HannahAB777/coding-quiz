@@ -17,9 +17,16 @@ You can run the application from the deployed link below:
 
 ## Usage
 
+ click to start the quiz
+ ![image](https://user-images.githubusercontent.com/93077324/153992122-84ef7f9b-d0b2-4645-8c47-e2c75c6c6b9b.png)
 
+ click to choice your answer
+ ![image](https://user-images.githubusercontent.com/93077324/153992153-a8cd92c9-f583-4de4-80ba-e1d10ab1b815.png)
 
+ enter your highscore
+ ![image](https://user-images.githubusercontent.com/93077324/153992179-851dbfb4-9d45-456b-82a8-387d42ddf59d.png)
 
+ 
 ## Credits
 
 Author: Hannah Allison-Batt
