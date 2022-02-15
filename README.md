@@ -25,7 +25,10 @@ You can run the application from the deployed link below:
 
  enter your highscore
  ![image](https://user-images.githubusercontent.com/93077324/153992179-851dbfb4-9d45-456b-82a8-387d42ddf59d.png)
-
+ 
+ view highscores
+ 
+ ![image](https://user-images.githubusercontent.com/93077324/153998282-454df895-8706-4bfa-94ce-e80eef510e3e.png)
  
 ## Credits
 
@@ -34,6 +37,9 @@ Author: Hannah Allison-Batt
 Github: [https://github.com/HannahAB777](https://github.com/HannahAB777)
 
 ## License
+
+ [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 
 
 
