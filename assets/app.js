@@ -8,19 +8,21 @@ var currentQuestion = 0;
 const userinput = document.getElementById("input-inital");
 let userName = userinput.value; 
 let savedScores = [];
+const quizBox = document.getElementById("question");
 
-
+//click to start the game
 start.addEventListener("click", startGame);
-
+//find score is local storage
 let localSavedScores = JSON.parse(localStorage.getItem("score"));
-
+//if no scores do nothing if scores
 if (localSavedScores !== ""){
-
+//push the scores to the saved scores array
 savedScores.push(localSavedScores);
 }
 
 let timeLeft = 60; // 60 sec
 
+//timer function
 function startTimer(){
 
     let timerId = setInterval(function(){
@@ -94,12 +96,6 @@ function renderQuestion(questionIndex){
 
     }
 
-
-// get the question from questions array
-//put the question in the DOM
-//get the answers
-//loop through
-//generate btn put in DOM
 }
 
 function answerCheck(event){
@@ -112,14 +108,15 @@ function answerCheck(event){
     
     if(isCorrect){
         score = score + 20;
-        // do nothing
+       
     }else{
         // if wrong
         // deduct the time by 10 sec
         timeLeft = timeLeft - 10;
-        // [maybe] show the user feedback
-
+     
     }
+
+    
 
     // move on to next question
     currentQuestion = currentQuestion + 1;
@@ -134,13 +131,18 @@ function answerCheck(event){
 score = score;
 
 function endGame(){
-    clearInterval(timer);
-//stop timer
+//time left == 0
+    timeLeft = -01;
+    //clear timer
+    timer.classList.add("hide");
+
+  //hide questions and show highscore input 
 document.getElementById('question').classList.add('hide');
 document.getElementById('end-game').classList.remove('hide');
 
 const highScoreSubmit = document.getElementById("score-submit");
 
+//submit name
 highScoreSubmit.addEventListener("click", function (submit){
     
     const userName = userinput.value; 
@@ -152,6 +154,7 @@ if(userName === ""){
 else 
 if(userName !== ""){
     console.log("button was clicked");
+    //if there is an input show highscores
     document.getElementById('end-game').classList.add('hide');
     document.getElementById("highscore-page").classList.remove('hide'); 
     console.log(userName);
@@ -165,7 +168,7 @@ if(userName !== ""){
     localStorage.setItem("score", JSON.stringify(savedScores));
     
     
-    
+    //render list of highscores
     for (let i = 0; i < savedScores.length; i++) {
         const scores = savedScores[i];
         
@@ -181,20 +184,3 @@ if(userName !== ""){
 });
 
 }
-
-
-//show end game screen
-// if user doesnt enter anything alert them to that they cannot enter no value
-//prevent default
-////when the user clicks on submit save the name to the highscore list
-//local storage
-
-//grab items from local storage an render as a list
-//hide endgame
-//show highscores
-
-//var eventParent = document.getElementsByClassName("answer-container");
-//eventParent.addEventListener('click', showNextQuestion1);
-//function showNextQuestion1 (e){
-//    if (e.target !== e.currentTarget) {//   
-
